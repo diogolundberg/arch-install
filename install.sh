@@ -22,3 +22,6 @@ check_os
 
 # Run child scripts
 run_script "prerequisites.sh" "Prerequisites Setup"
+run_script "hypr.sh" "Hyprland & Critical Softwares Setup"
+run_script "utilities.sh" "Basic Utilities & Configs Setup"
+run_script "theming.sh" "Themes and Tools Setup"
