@@ -26,7 +26,7 @@ run_command "pacman -S --noconfirm pipewire wireplumber pamixer brightnessctl" "
 
 run_command "pacman -S --noconfirm ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono" "Installing Nerd Fonts and Symbols (Recommended)" "yes"
 
-run_command "pacman -S --noconfirm sddm && systemctl enable sddm.service" "Install and enable SDDM (Recommended)" "yes"
+run_command "pacman -S --noconfirm ly && systemctl enable ly@tty1.service" "Install and enable ly (Recommended)" "yes"
 
 run_command "yay -S --sudoloop --noconfirm brave-bin" "Install Brave Browser" "yes" "no"
 
