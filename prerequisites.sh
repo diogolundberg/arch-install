@@ -4,7 +4,7 @@
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../../")
 
 # Source helper file
-source $BASE_DIR/scripts/installer/helper.sh
+source $BASE_DIR/helper.sh
 
 log_message "Installation started for prerequisites section"
 print_info "\nStarting prerequisites setup..."

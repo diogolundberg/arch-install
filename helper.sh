@@ -114,7 +114,7 @@ function run_command {
 
 # Function to run a script with retry and confirmation
 function run_script {
-    local script="$BASE_DIR/scripts/installer/$1"
+    local script="$BASE_DIR/$1"
     local description="$2"
     if ask_confirmation "\nExecute '$description' script"; then
         while ! bash "$script"; do
