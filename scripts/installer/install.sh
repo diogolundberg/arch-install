@@ -4,7 +4,7 @@
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../../")
 
 # Source helper file
-source $BASE_DIR/helper.sh
+source $BASE_DIR/scripts/installer/helper.sh
 
 # Trap for unexpected exits
 trap 'trap_message' INT TERM
