@@ -23,7 +23,7 @@ elif run_command "pacman -S --noconfirm --needed base-devel" "Install YAY (Must)
     run_command "makepkg --noconfirm -si && cd .. # builds with makepkg" "Build YAY (Must)/Breaks the script" "no" "no"
 fi
 
-run_command "pacman -S --noconfirm pipewire wireplumber pamixer brightnessctl" "Configuring audio and brightness (Recommended)" "yes"
+run_command "pacman -S --noconfirm --needed pipewire wireplumber pipewire-pulse pipewire-alsa alsa-utils pamixer brightnessctl" "Configuring audio and brightness (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono" "Installing Nerd Fonts and Symbols (Recommended)" "yes"
 
