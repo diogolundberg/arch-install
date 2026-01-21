@@ -20,15 +20,17 @@ if [ -d /boot/grub ]; then
 elif [ -d /boot/loader/entries ]; then
     print_info "Detected systemd-boot"
 
-    run_command \
-      "ls /boot/amd-ucode.img >/dev/null" \
-      "Verify amd-ucode image exists" \
-      "yes"
+    if [ ! -f /boot/amd-ucode.img ]; then
+        print_error "amd-ucode image not found at /boot/amd-ucode.img"
+        print_error "Install amd-ucode before configuring the bootloader"
+        exit 1
+    fi
 
-    run_command \
-      "sed -i '/^initrd[[:space:]]\\+\\/initramfs-linux.img/i initrd  /amd-ucode.img' /boot/loader/entries/*.conf" \
-      "Ensure amd-ucode initrd is loaded before initramfs" \
-      "yes"
+    for entry in /boot/loader/entries/*.conf; do
+        if ! grep -q '^initrd[[:space:]]\+/amd-ucode.img$' "$entry"; then
+            sed -i '/^initrd[[:space:]]\+\/initramfs-linux.img/i initrd /amd-ucode.img' "$entry"
+        fi
+    done
 
 else
     print_error "No supported bootloader detected (GRUB or systemd-boot)"
