@@ -17,9 +17,10 @@ run_command "git config --global user.email \"dclundberg@gmail.com\"" "Configure
 
 if ! command -v yay > /dev/null; then
     run_command "pacman -S --noconfirm --needed base-devel" "Install yay build deps" "yes"
-    run_command "rm -rf /tmp/yay && git clone https://aur.archlinux.org/yay.git /tmp/yay" "Clone yay" "yes" "no"
+    run_command "rm -rf /tmp/yay" "Cleanup previous yay dir" "yes"
+    run_command "git clone https://aur.archlinux.org/yay.git /tmp/yay" "Clone yay" "yes" "no"
     run_command "bash -lc 'cd /tmp/yay && makepkg -si --noconfirm'" "Build and install yay" "yes" "no"
-    run_command "rm -rf /tmp/yay" "Cleanup yay build directory" "yes"
+    run_command "rm -rf /tmp/yay" "Cleanup yay dir" "yes"
 fi
 
 run_command "pacman -S --noconfirm pipewire wireplumber pamixer brightnessctl" "Configuring audio and brightness (Recommended)" "yes"
