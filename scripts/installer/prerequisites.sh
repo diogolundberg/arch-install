@@ -30,7 +30,7 @@ run_command "pacman -S --noconfirm ly && systemctl enable ly@tty1.service" "Inst
 
 run_command "yay -S --sudoloop --noconfirm brave-bin" "Install Brave Browser" "yes" "no"
 
-run_command "pacman -S --noconfirm ghostty" "Install Ghostty (Recommended)" "yes"
+run_command "pacman -S --noconfirm --needed ghostty ghostty-terminfo ghostty-shell-integration" "Install Ghostty (+ terminfo + shell integration) (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm vim" "Install vim" "yes"
 
