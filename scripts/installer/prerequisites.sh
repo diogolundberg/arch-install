@@ -15,13 +15,11 @@ run_command "pacman -S --noconfirm git" "Install git" "yes"
 run_command "git config --global user.name \"Diogo Lundberg\"" "Configure git user name" "yes"
 run_command "git config --global user.email \"dclundberg@gmail.com\"" "Configure git user email" "yes"
 
-if ! command -v yay > /dev/null; then
-    run_command "pacman -S --noconfirm --needed base-devel" "Install yay build deps" "yes"
-
-    run_command "rm -rf /tmp/yay" "Cleanup previous yay dir" "yes"
-    run_command "git clone https://aur.archlinux.org/yay.git /tmp/yay" "Clone yay" "yes" "no"
-    run_command "cd /tmp/yay && makepkg -si --noconfirm" "Build and install yay" "yes" "no"
-    run_command "rm -rf /tmp/yay" "Cleanup yay dir" "yes"
+if command -v yay > /dev/null; then
+    print_info "Skipping yay installation (already installed)."
+elif run_command "pacman -S --noconfirm --needed git base-devel" "Install YAY (Must)/Breaks the script" "yes"; then
+    run_command "git clone https://aur.archlinux.org/yay.git && cd yay" "Clone YAY (Must)/Breaks the script" "no" "no"
+    run_command "makepkg --noconfirm -si && cd .. # builds with makepkg" "Build YAY (Must)/Breaks the script" "no" "no"
 fi
 
 run_command "pacman -S --noconfirm pipewire wireplumber pamixer brightnessctl" "Configuring audio and brightness (Recommended)" "yes"
