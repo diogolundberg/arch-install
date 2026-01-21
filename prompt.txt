@@ -1,0 +1,65 @@
+Minimal Arch Linux + Hyprland Setup
+
+Hardware
+- CPU: AMD Ryzen 5 5600X
+- GPU: AMD Radeon RX 6800 XT (RDNA2)
+
+Operating System
+- Arch Linux
+
+Display / Windowing
+- Wayland
+- Hyprland
+
+Graphics Stack
+- Kernel amdgpu driver (in-tree)
+- Mesa (OpenGL)
+- Vulkan (vulkan-radeon)
+- libva-mesa-driver
+
+Audio
+- PipeWire
+- wireplumber
+- pipewire-pulse
+
+Session / Integration
+- xdg-desktop-portal
+- xdg-desktop-portal-hyprland
+- polkit
+
+User Interface Philosophy
+- No desktop environment
+- No desktop icons
+- Keyboard-first workflow with full mouse support
+
+Application Launching
+- Terminal-first
+- Optional Spotlight-style launcher (fuzzel)
+
+Window & Workspace Management
+- Hyprland workspaces for task separation
+- Keyboard-based window switching and focus
+- Fullscreen support for games
+- Mouse-driven interaction fully supported
+
+Gaming
+- Steam (multilib enabled)
+- Proton for Windows games
+- Optional tools: MangoHud, GameMode
+- Native Wayland + XWayland as needed
+
+Development Tools
+- Sublime text
+- Zed editor
+- Terminal-based development workflow
+
+Login / Startup
+- Start Hyprland directly from TTY
+  or
+- Lightweight display manager (ly)
+
+Design Goals
+- Minimal system footprint
+- Excellent Wayland and Vulkan support
+- Optimal performance for gaming and development
+- No unnecessary background services or UI components
