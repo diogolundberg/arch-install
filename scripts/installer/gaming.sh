@@ -11,6 +11,8 @@ check_os
 
 run_command "pacman -S --noconfirm --needed steam" "Install Steam" "yes"
 
+run_command "pacman -S --noconfirm --needed discord" "Install Discord" "yes"
+
 run_command "pacman -S --noconfirm --needed gamemode lib32-gamemode" "Install GameMode (Recommended)" "yes"
 
 run_command "pacman -S --noconfirm --needed mangohud lib32-mangohud" "Install MangoHud (Recommended)" "yes"
