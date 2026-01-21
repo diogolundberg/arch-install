@@ -14,11 +14,13 @@ run_command "pacman -S --noconfirm --needed hyprland xorg-xwayland" "Install Hyp
 
 run_command "pacman -S --noconfirm --needed xdg-desktop-portal-hyprland" "Install XDG desktop portal for Hyprland" "yes"
 
-run_command "pacman -S --noconfirm polkit-gnome" "Install GNOME Polkit agent for authentication dialogs" "yes"
+run_command "pacman -S --noconfirm --needed polkit-gnome" "Install GNOME Polkit agent for authentication dialogs" "yes"
 
 run_command "pacman -S --noconfirm --needed qt5-wayland qt6-wayland" "Install Qt Wayland support (reduce XWayland fallback)" "yes"
 
-run_command "mkdir -p /home/$SUDO_USER/.config/hypr/ && cp -r $BASE_DIR/configs/hypr/hyprland.conf /home/$SUDO_USER/.config/hypr/" "Copy hyprland config (Must)" "yes" "no"
+run_command "mkdir -p /home/$SUDO_USER/.config/hypr" "Create Hypr config directory" "no" "yes"
+
+run_command "test -f /home/$SUDO_USER/.config/hypr/hyprland.conf || cp $BASE_DIR/configs/hypr/hyprland.conf /home/$SUDO_USER/.config/hypr/" "Copy hyprland config if missing (Must)" "yes" "yes"
 
 run_command "chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.config/hypr" "Fix ownership for Hypr config" "no" "yes"
 
