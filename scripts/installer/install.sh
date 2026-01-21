@@ -21,7 +21,7 @@ check_root
 check_os
 
 # Run child scripts
-run_script "prerequisites.sh" "Prerequisites Setup
+run_script "prerequisites.sh" "Prerequisites Setup"
 run_script "amd-hardware.sh" "AMD Radeon Drivers"
 run_script "amd-microcode-boot.sh" "AMD Boot Integration"
 run_script "hypr.sh" "Hyprland & Critical Softwares Setup"
