@@ -21,6 +21,12 @@ run_command "pacman -S --noconfirm --needed thunar" "Install Thunar (File manage
 
 run_command "pacman -S --noconfirm --needed pavucontrol" "Install pavucontrol (Recommended: audio routing GUI)" "yes"
 
+run_command "pacman -S --noconfirm --needed mission-center" "Install Mission Center (Graphical process monitor)" "yes"
+
+run_command "pacman -S --noconfirm --needed htop" "Install htop (Terminal process monitor)" "yes"
+
+run_command "pacman -S --noconfirm --needed btop" "Install btop (Visual terminal system monitor)" "yes"
+
 run_command "pacman -S --noconfirm --needed networkmanager" "Install NetworkManager (Recommended: network management)" "yes"
 run_command "systemctl enable --now NetworkManager" "Enable NetworkManager" "yes"
 
