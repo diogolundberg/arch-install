@@ -33,6 +33,8 @@ run_command "yay -S --sudoloop --noconfirm brave-bin" "Install Brave Browser" "y
 
 run_command "pacman -S --noconfirm --needed ghostty ghostty-terminfo ghostty-shell-integration" "Install Ghostty (+ terminfo + shell integration) (Recommended)" "yes"
 
+run_command "pacman -S --noconfirm --needed less" "Install less (pager utility)" "yes"
+
 run_command "pacman -S --noconfirm vim" "Install vim" "yes"
 
 run_command "pacman -S --noconfirm tar" "Install tar for extracting files (Must)/needed for copying themes" "yes"

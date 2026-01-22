@@ -16,6 +16,8 @@ if ! command -v yay >/dev/null 2>&1; then
 fi
 
 run_command "pacman -S --noconfirm --needed zed" "Install Zed editor (used by hyprland.conf)" "yes"
+run_command "mkdir -p /home/$SUDO_USER/.local/bin" "Create ~/.local/bin for user" "no" "yes"
+run_command "ln -sf /usr/bin/zeditor /home/$SUDO_USER/.local/bin/zed" "Expose Zed as 'zed' command" "no" "yes"
 
 run_command "yay -S --sudoloop --noconfirm --needed sublime-text-4" "Install Sublime Text (used by hyprland.conf)" "yes" "no"
 
