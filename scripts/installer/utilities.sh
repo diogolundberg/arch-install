@@ -13,7 +13,8 @@ run_command "pacman -S --noconfirm --needed fuzzel" "Install Fuzzel (Launcher us
 
 run_command "pacman -S --noconfirm --needed wl-clipboard" "Install wl-clipboard (Required: wl-copy used by hyprland.conf)" "yes"
 
-run_command "pacman -S --noconfirm --needed grim slurp" "Install grim + slurp (Required: screenshots used by hyprland.conf)" "yes"
+run_command "yay -S --sudoloop --noconfirm --needed grimblast-git" "Install grimblast (Screenshots for hyprland.conf)" "yes" "no"
+run_command "mkdir -p /home/$SUDO_USER/screenshots" "Create screenshots folder" "no" "yes"
 
 run_command "pacman -S --noconfirm --needed thunar" "Install Thunar (File manager used by hyprland.conf)" "yes"
 
